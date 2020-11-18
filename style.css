@@ -1,0 +1,271 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Spartan', sans-serif;
+	font-size: 12px;
+}
+
+.app{
+	height: 100vh;
+	width: 100%;
+	max-width: 1440px;
+	position: relative;
+	margin: 0 auto;
+}
+.nav{
+	position: absolute;
+	top: 7%;
+	left: 4%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.nav__logo{
+	margin-right: 30px;
+}
+.nav__items, .nav__items__mobile ul{
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.nav__items__mobile ul{
+	display: none;
+}
+.nav__items__item{
+	padding: 0 10px;
+	color: white;
+	position: relative;
+	cursor:pointer;
+}
+
+.nav__items__item::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -8px;
+	width: 0;
+	height: 2px;
+	background: white;
+	transition:all .3s ease-in;
+}
+
+.nav__items__item:hover::before{
+	width: 70%;
+}
+main{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.product{
+	height: 65%;
+	width: 100%;
+	display: flex;
+}
+.product__image{
+	width: 57%;
+	height: 100%;
+	overflow: hidden;
+}
+.product__image__slides img{
+	width: 100%;
+	height: 100%;
+}
+.product__image__slides{
+	display: flex;
+	flex-wrap: nowrap;
+	height: 100%;
+	width: 100%;
+	transform: translateX(0);
+	transition: all .3s ease-in;
+}
+.product__content{
+	width: 43%;
+	height: 100%;
+	padding: 5% 6%; 
+	position: relative;
+}
+
+#product__content__title{
+	font-size: calc(1.7rem + .5vw);
+}
+
+#product__content__body{
+	margin-top: 30px;
+	line-height: 1.8;
+	color: hsl(0, 0%, 63%);
+}
+
+.product__content__cta{
+	margin-top: 30px;
+	letter-spacing: 7px;
+	font-weight: 700;
+	color: hsl(0, 0%, 27%);
+}
+.product__content p span{
+	margin-left: 20px;
+}
+.product__content__cta:hover, .product__content__cta:active{
+	cursor: pointer;
+	opacity: .5;
+}
+.product__slider{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: fit-content;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+}
+.product__slider div{
+	background: black;
+}
+.product__slider div img{
+	margin: 1.5vw 2.2vw;
+}
+.product__slider div:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,.7 );
+}
+
+.about{
+	height: 35%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+.about__content{
+	width: 35%;
+}
+.about__image{
+	width: calc(65% / 2);
+	height: 100%;
+}
+.about__image img{
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.about__content{
+	padding: 3.5% 3% 0%;
+}
+.about__content h6{
+	color: black;
+	letter-spacing: 5px;
+	font-weight: 700;
+	font-size: calc(.4rem + .5vw)
+}
+.about__content p{
+	margin-top: 15px;
+	line-height: 1.5;
+	color: hsl(0, 0%, 63%);
+}
+.backdrop{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 10;
+	background: rgba(0,0,0,.7);
+	display: none;
+}
+.for__desktop{
+	display: block;
+}
+.for__mobile{
+	display: none;
+}
+@media screen and (max-width: 767px){
+	.app{
+		height: auto;
+	}
+	.for__desktop{
+		display: none;
+	}
+	.for__mobile{
+		display: block;
+	}
+	.nav{
+		top: -130px;
+		left: 0%;
+		width: 100%;
+		height: 130px;
+		transform: translateY(0px);
+		padding: 60px 0;
+		background: white;
+		justify-content: flex-end;
+		transition: all .3s ease-in;
+		z-index: 15;
+	}
+	.nav__items__mobile{
+		position: absolute;
+	}
+	.nav__items__mobile ul{
+		display: flex;
+	}
+	.nav__items__item{
+		padding: 0 30px 0 0;
+		color: black;
+		font-weight: 700;
+	}
+	.nav__menuIcon{
+		position: absolute;
+		top: 55px;
+		left: 5%;
+		z-index: 20;
+	}
+	.nav__logo__mobile{
+		position: absolute;
+		top: 57px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 10;
+	}
+
+	.product{
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	.product__image{
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+	}
+	.product__image__slides img{
+		margin: 0;
+	}
+	.product__content{
+		width: 100%;
+		height: auto;
+		padding: 20% 7%;
+	}
+	.product__slider{
+		bottom: 100%;
+		left: 100%;
+		transform: translateX(-100%);
+		
+	}
+	.product__slider div{
+		padding: 10px 15px; 
+	}
+	.about{
+		flex-direction: column;
+	}
+	.about > div{
+		width: 100%;
+	}
+	.about__content{
+		padding: 20% 7%;
+	}
+
+}

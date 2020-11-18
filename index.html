@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  
+  <title>Frontend Mentor | Room homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <nav id="nav" class="nav">
+      <div class="nav__logo for__desktop">
+        <img src="./images/logo.svg" alt="">
+      </div>
+      <ul class="nav__items ">
+        <li class="nav__items__item">home</li>
+        <li class="nav__items__item">shop</li>
+        <li class="nav__items__item">about</li>
+        <li class="nav__items__item">contact</li>
+      </ul>
+  </nav>
+
+  <div id="menu-icon" class="nav__menuIcon for__mobile">
+      <img class="for__mobile" src="./images/icon-hamburger.svg" alt="">
+  </div>
+
+  <div class="nav__logo__mobile for__mobile">
+      <img class="for__mobile"  src="./images/logo.svg" alt="">
+  </div>
+
+  <main>
+    <div onclick="hide_navItems()" class="backdrop" id="backdrop"></div>
+    <section class="product">
+      <div class="product__image">
+        <div class="product__image__slides" id="product__image__slides">
+          <img class="for__desktop" src="./images/desktop-image-hero-1.jpg" alt="">
+          <img class="for__desktop" src="./images/desktop-image-hero-2.jpg" alt="">
+          <img class="for__desktop" src="./images/desktop-image-hero-3.jpg" alt="">
+          <img class="for__mobile" src="./images/mobile-image-hero-1.jpg" alt="">
+          <img class="for__mobile" src="./images/mobile-image-hero-2.jpg" alt="">
+          <img class="for__mobile" src="./images/mobile-image-hero-3.jpg" alt="">
+        </div>
+      </div>
+      <div class="product__content">
+        <h1 id="product__content__title">Discover innovative ways to decorate</h1>
+        <p id="product__content__body">
+          We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.
+        </p>
+        <p class="product__content__cta">SHOP NOW <span><img src="./images/icon-arrow.svg" alt=""></span></p>
+        <div class="product__slider">
+          <div id="slide-prev"><img src="./images/icon-angle-left.svg" alt=""></div>
+          
+          <div id="slide-next"><img src="./images/icon-angle-right.svg" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about__image">
+        <img src="./images/image-about-dark.jpg" alt="">
+      </div>
+      <div class="about__content">
+        <h6>ABOUT OUR FURNITURE</h6>
+        <p>
+          Our multifunctional collection blends design and function to suit your individual taste.
+          Make each room unique, or pick a cohesive theme that best express your interests and what
+          inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+          or anything in between. Product specialists are available to help you create your dream space.
+        </p>
+      </div>
+      <div class="about__image">
+        <img src="./images/image-about-light.jpg" alt="">
+      </div>
+    </section>
+  </main>
+
+</div>
+  
+  <script src="./script.js"> </script>
+</body>
+</html>
